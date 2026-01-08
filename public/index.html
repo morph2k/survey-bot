@@ -9,15 +9,17 @@
   <body>
     <main class="page">
       <section class="card">
+        <div class="top-actions">
+          <a href="/admin"><button type="button" class="secondary">Admin login</button></a>
+        </div>
         <header>
-          <span class="tag">Surveybot</span>
-          <h1>Collect quick satisfaction signals.</h1>
+          <h1>Survey bot</h1>
           <p>
             Share a survey link with your audience, collect a 1-4 rating, and
             review stats in one place.
           </p>
         </header>
-        <div class="grid two">
+        <div class="grid single">
           <div>
             <h2>Take a survey</h2>
             <p>Paste or type the survey slug you were given.</p>
@@ -29,21 +31,7 @@
               </div>
             </form>
           </div>
-          <div>
-            <h2>Issuer dashboard</h2>
-            <p>Log in to create surveys and see response stats.</p>
-            <div class="survey-actions">
-              <a href="/admin"><button type="button" class="secondary">Go to login</button></a>
-            </div>
-            <div class="notice">
-              Issuers use the admin area to create surveys. Participants only
-              need the survey slug.
-            </div>
-          </div>
         </div>
-        <footer>
-          Surveybot stores timestamps automatically for each response.
-        </footer>
       </section>
     </main>
     <script>

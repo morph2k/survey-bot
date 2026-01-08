@@ -126,6 +126,16 @@ app.get("/admin/dashboard", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "dashboard.html"));
 });
 
+app.get("/api/me", requireAuth, (req, res) => {
+  const issuer = db
+    .prepare("SELECT id, username FROM issuers WHERE id = ?")
+    .get(req.session.issuerId);
+  if (!issuer) {
+    return res.status(404).json({ error: "Issuer not found" });
+  }
+  res.json({ id: issuer.id, username: issuer.username });
+});
+
 app.post("/admin/login", (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) {

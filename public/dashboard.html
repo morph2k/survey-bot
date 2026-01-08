@@ -9,9 +9,13 @@
   <body>
     <main class="page">
       <section class="card">
+        <div class="top-actions">
+          <form method="post" action="/admin/logout">
+            <button type="submit" class="secondary">Log out</button>
+          </form>
+        </div>
         <header>
-          <span class="tag">Issuer dashboard</span>
-          <h1>Your surveys and stats</h1>
+          <h1 id="dashboard-title">Your surveys and stats</h1>
           <p>Create surveys and share the slug with participants.</p>
         </header>
 
@@ -43,9 +47,6 @@
             <h2>Share link</h2>
             <p>Survey links look like:</p>
             <div class="notice" id="share-example">/s/your-survey-slug</div>
-            <form method="post" action="/admin/logout">
-              <button type="submit" class="secondary">Log out</button>
-            </form>
           </div>
         </section>
 

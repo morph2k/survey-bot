@@ -1,5 +1,6 @@
 const surveyList = document.getElementById("survey-list");
 const categoryRollup = document.getElementById("category-rollup");
+const dashboardTitle = document.getElementById("dashboard-title");
 const createForm = document.getElementById("survey-create");
 const createMessage = document.getElementById("create-message");
 const categoryForm = document.getElementById("category-create");
@@ -235,3 +236,18 @@ updateFilterInputs();
 fetchCategories();
 fetchSurveys();
 fetchCategoryRollups();
+
+async function fetchIssuer() {
+  const res = await fetch("/api/me");
+  if (!res.ok) {
+    return;
+  }
+  const data = await res.json();
+  if (data && data.username && dashboardTitle) {
+    const normalized = String(data.username).trim();
+    const suffix = normalized.toLowerCase().endsWith("s") ? "'" : "'s";
+    dashboardTitle.textContent = `${normalized}${suffix} dashboard`;
+  }
+}
+
+fetchIssuer();
