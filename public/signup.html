@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Issuer</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <header>
+          <span class="tag">Issuer signup</span>
+          <h1>Create your issuer account</h1>
+          <p>Each issuer has their own surveys and dashboard.</p>
+        </header>
+        <form method="post" action="/admin/signup" class="grid">
+          <div>
+            <label for="username">Username</label>
+            <input id="username" name="username" required />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" required />
+          </div>
+          <div class="survey-actions">
+            <button type="submit">Create account</button>
+            <a href="/admin"><button type="button" class="secondary">Back to login</button></a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

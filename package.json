@@ -1,0 +1,15 @@
+{
+  "name": "surveybot",
+  "version": "1.0.0",
+  "description": "Simple survey collector with issuer dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^9.4.3",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  }
+}

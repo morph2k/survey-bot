@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surveybot Admin</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <header>
+          <span class="tag">Issuer login</span>
+          <h1>Access your survey dashboard</h1>
+          <p>Use the issuer credentials configured on the server.</p>
+        </header>
+        <form method="post" action="/admin/login" class="grid">
+          <div>
+            <label for="username">Username</label>
+            <input id="username" name="username" required />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" required />
+          </div>
+          <div class="survey-actions">
+            <button type="submit">Sign in</button>
+            <a href="/admin/signup"><button type="button" class="secondary">Create issuer</button></a>
+            <a href="/"><button type="button" class="secondary">Back home</button></a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

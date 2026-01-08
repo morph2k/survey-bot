@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surveybot Dashboard</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <header>
+          <span class="tag">Issuer dashboard</span>
+          <h1>Your surveys and stats</h1>
+          <p>Create surveys and share the slug with participants.</p>
+        </header>
+
+        <section class="grid two">
+          <div>
+            <h2>Create survey</h2>
+            <form id="survey-create" class="grid">
+              <div>
+                <label for="survey-name">Survey name</label>
+                <input id="survey-name" name="name" placeholder="Summer feedback" required />
+              </div>
+              <div>
+                <label for="survey-slug">Survey slug</label>
+                <input id="survey-slug" name="slug" placeholder="summer-feedback" required />
+              </div>
+              <div>
+                <label for="survey-category">Category</label>
+                <select id="survey-category" name="categoryId">
+                  <option value="">No category</option>
+                </select>
+              </div>
+              <div class="survey-actions">
+                <button type="submit">Create survey</button>
+              </div>
+            </form>
+            <div id="create-message" class="notice hidden"></div>
+          </div>
+          <div>
+            <h2>Share link</h2>
+            <p>Survey links look like:</p>
+            <div class="notice" id="share-example">/s/your-survey-slug</div>
+            <form method="post" action="/admin/logout">
+              <button type="submit" class="secondary">Log out</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="grid two">
+          <div>
+            <h2>Create category</h2>
+            <form id="category-create" class="grid">
+              <div>
+                <label for="category-name">Category name</label>
+                <input id="category-name" name="name" placeholder="Customer success" required />
+              </div>
+              <div class="survey-actions">
+                <button type="submit">Add category</button>
+              </div>
+            </form>
+            <div id="category-message" class="notice hidden"></div>
+          </div>
+          <div>
+            <h2>Filter stats</h2>
+            <form id="filter-form" class="grid">
+              <div>
+                <label for="filter-type">Filter type</label>
+                <select id="filter-type" name="type">
+                  <option value="all">All responses</option>
+                  <option value="after">After date</option>
+                  <option value="weekday">Day of week</option>
+                  <option value="week">Per week</option>
+                  <option value="month">Per month</option>
+                </select>
+              </div>
+              <div id="filter-value-wrapper">
+                <label for="filter-value">Filter value</label>
+                <input id="filter-value" name="value" type="date" />
+              </div>
+              <div id="filter-weekday-wrapper" class="hidden">
+                <label for="filter-weekday">Day of week</label>
+                <select id="filter-weekday" name="weekday">
+                  <option value="0">Sunday</option>
+                  <option value="1">Monday</option>
+                  <option value="2">Tuesday</option>
+                  <option value="3">Wednesday</option>
+                  <option value="4">Thursday</option>
+                  <option value="5">Friday</option>
+                  <option value="6">Saturday</option>
+                </select>
+              </div>
+              <div class="survey-actions">
+                <button type="submit">Apply filter</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <h2>Survey stats</h2>
+        <div id="survey-list" class="grid"></div>
+
+        <h2>Category rollups</h2>
+        <div id="category-rollup" class="grid"></div>
+      </section>
+    </main>
+    <script src="/public/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <header>
+          <span class="tag" id="survey-tag">Survey</span>
+          <h1 id="survey-title">Loading survey...</h1>
+          <p>How satisfied are you? Choose a number from 1-4.</p>
+        </header>
+        <div class="rating-grid" id="rating-grid">
+          <button class="rating-button" data-rating="1">1</button>
+          <button class="rating-button" data-rating="2">2</button>
+          <button class="rating-button" data-rating="3">3</button>
+          <button class="rating-button" data-rating="4">4</button>
+        </div>
+        <div id="survey-message" class="notice hidden"></div>
+        <footer>
+          Your response is anonymous and stored with a timestamp.
+        </footer>
+      </section>
+    </main>
+    <script src="/public/survey.js"></script>
+  </body>
+</html>
